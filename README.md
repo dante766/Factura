@@ -1,0 +1,1 @@
+Creador de comprobantes para presentar ante la autoridad que lo requiera
