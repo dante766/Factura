@@ -256,6 +256,9 @@
                         </p>
                         <img src="" alt="" id="paste_image" height="100"
                             style="object-fit:contain;pointer-events:none;">
+			     <br>
+			    <!-- Nuevo input para móviles -->
+        <input type="file" id="file_input" accept="image/*" class="mt-2" onchange="cargarImagenArchivo(event)">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -711,6 +714,16 @@ Argentina</textarea>
             $('#logoModal').modal('toggle');
         }
 
+function cargarImagenArchivo(event) {
+    let file = event.target.files[0];
+    if (file) {
+        let reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById("paste_image").src = e.target.result;
+        }
+        reader.readAsDataURL(file);
+    }
+}
 
         const email_nombre = document.getElementById('email_nombre');
         const email_email = document.getElementById('email_email');
